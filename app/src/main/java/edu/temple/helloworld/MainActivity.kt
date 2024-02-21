@@ -21,7 +21,9 @@ class MainActivity : AppCompatActivity() {
         
         findViewById<Button>(R.id.clickMeButton).setOnClickListener {
             val name = findViewById<EditText>(R.id.nameEditText).text
-            if (name.isNotEmpty()) {
+            if (name.isEmpty()) {
+                displayTextView.text = "ERROR"
+            }else{
                 displayTextView.text = "Hello, ${name}"
             }
         }
